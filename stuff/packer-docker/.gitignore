@@ -1,0 +1,7 @@
+# Created by http://www.gitignore.io
+
+### Vagrant ###
+.vagrant/
+
+### Packer ###
+packer_cache

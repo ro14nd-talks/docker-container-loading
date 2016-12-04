@@ -1,0 +1,23 @@
+{
+	"source": {
+		"repoSource": {
+			"projectId": "devopscon-2016",
+			"repoName": "default",
+			"branchName": "master"
+		}
+	},
+	"steps": [
+		{
+			"name": "gcr.io/cloud-builders/docker",
+			"args": [
+				"build",
+				"-t",
+				"gcr.io/devopscon-2016/java",
+				"."
+			]
+		}
+	],
+	"images": [
+		"gcr.io/devopscon-2016/java"
+	]
+}

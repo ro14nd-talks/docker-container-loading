@@ -1,0 +1,25 @@
+{
+    "builders":[{
+        "type": "docker",
+        "image": "ubuntu",
+        "export_path": "image.tar"
+    }],
+    "provisioners":[
+        {
+            "type": "shell",
+            "inline": ["apt-get -y update; apt-get install -y curl"]
+        },
+        {
+            "type": "chef-solo",
+            "cookbook_paths": ["site-cookbooks"],
+            "run_list": ["apache::default"]
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "docker-import",
+            "repository": "tcnksm/packer-chef",
+            "tag": "0.1"
+        }
+    ]
+}

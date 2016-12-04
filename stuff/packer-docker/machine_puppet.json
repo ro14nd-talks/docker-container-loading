@@ -1,0 +1,24 @@
+{
+    "builders":[{
+        "type": "docker",
+        "image": "ubuntu",
+        "export_path": "image.tar"
+    }],
+    "provisioners":[
+        {
+            "type": "shell",
+            "inline": ["apt-get -y update; apt-get install -y puppet-common"]
+        },
+        {
+            "type": "puppet-masterless",
+            "manifest_file": "manifests/default.pp"
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "docker-import",
+            "repository": "tcnksm/packer-puppet",
+            "tag": "0.1"
+        }
+    ]
+}

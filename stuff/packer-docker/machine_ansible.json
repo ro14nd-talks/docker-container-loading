@@ -1,0 +1,26 @@
+{
+    "builders":[{
+        "type": "docker",
+        "image": "fedora",
+        "export_path": "image.tar"
+    }],
+    "provisioners":[
+        {
+            "type": "shell",
+            "inline": [
+                "yum -y install ansible python-dnf"
+            ]
+        },
+        {
+            "type": "ansible",
+            "playbook_file": "playbooks/local.yml"
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "docker-import",
+            "repository": "tcnksm/packer-ansible",
+            "tag": "0.1"
+        }
+    ]
+}

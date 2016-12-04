@@ -1,0 +1,8 @@
+- hosts: 127.0.0.1
+  user: root
+  tasks:
+    - name: Install apache2
+      dnf: name={{ item }} state=present
+      with_items:
+        - git
+        - httpd
