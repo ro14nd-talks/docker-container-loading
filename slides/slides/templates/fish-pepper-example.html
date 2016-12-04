@@ -1,0 +1,26 @@
+<h1 class="menu-title" style="display: none">images.yml</h1>
+<h1>images.yml</h1>
+<pre><code class="yaml" style="font-size: 74%">fish-pepper:
+  params:
+    - "base"
+    - "version"
+    - "type"
+  name: "jolokia/fish-pepper-java"
+  maintainer: "Roland Huss &lt;roland@jolokia.org>"
+  # ... additional global params
+config:
+  version:
+    openjdk7:
+      java: "java:7u79"
+    openjdk8:
+      java: "java:8u45"
+  type:
+    jre:
+      extension: "-jre"
+    jdk:
+      extension: "-jdk"
+  base:
+    alpine:
+      from: "alpine:3.4"
+    # ... additional base definitions for 'centos', 'jboss'
+</code></pre>

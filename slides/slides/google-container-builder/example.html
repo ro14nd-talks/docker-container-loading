@@ -1,0 +1,20 @@
+<h1 class="menu-title" style="display: none">Example</h1>
+<h1>Example</h1>
+
+<ul>
+  <li>cloudbuild.yaml : </li>
+</ul>
+<pre><code class="yaml" style="width: 115%; font-size: 100%">steps:
+- name: "gcr.io/cloud-builders/docker",
+  args: [ "build", "-t", "gcr.io/devopscon-2016/java", "." ]
+images: [ "gcr.io/devopscon-2016/java" ]
+</pre></code>
+<ul>
+  <li>Build:</li>
+</ul>
+<pre><code class="sh" style="width: 115%; font-size: 100%">gcloud container builds submit --config cloudbuild.yaml \
+ gs://devopscon-2016/container-build-example.tar.gz
+...
+gcloud container builds describe $BUILD_ID
+gcloud container builds list
+</pre></code>

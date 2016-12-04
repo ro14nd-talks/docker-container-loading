@@ -1,0 +1,14 @@
+<h1 class="menu-title" style="display: none">Dockerfile template</h1>
+<h1>Dockerfile template</h1>
+<pre><code class="dockerfile" style="margin-left: -5%; width: 120%; font-size: 100%">FROM {{= fp.config.base.from }}
+
+MAINTAINER {{= fp.maintainer }}
+
+ENV JOLOKIA_VERSION {{= fp.jolokiaVersion }}
+
+RUN chmod 755 /bin/jolokia_opts \
+  && mkdir /opt/jolokia \
+  && wget {{= fp.jolokiaUrl}} -O /opt/jolokia/jolokia.jar
+
+CMD java -jar /opt/jolokia/jolokia.jar --version
+</code></pre>

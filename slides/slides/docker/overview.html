@@ -1,0 +1,16 @@
+<h1 class="menu-title" style="display: none">Docker CLI</h1>
+<img src="images/docker.png" style="float: right; width: 25%; margin-top: -3%; margin-left: 10%"/>
+<h1>Docker CLI</h1>
+<ul>
+  <li><code>docker commit</code></li>
+</ul>
+<pre><code class="bash">docker commit 3e3d3cf39 redis-server:1.0</code></pre>
+<ul>
+  <li><code>docker build</code></li>
+</ul>
+<pre><code class="dockerfile">FROM ubuntu:14.04
+RUN apt-get update && \
+    apt-get install -y redis-server
+EXPOSE 6379
+ENTRYPOINT ["/usr/bin/redis-server"]
+</code></pre>

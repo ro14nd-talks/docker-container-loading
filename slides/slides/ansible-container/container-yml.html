@@ -1,0 +1,25 @@
+<h1 class="menu-title" style="display: none">container.yml</h1>
+<h1>container.yml</h1>
+
+<pre><code class="yaml" style="font-size: 80%">  version: "1"
+  defaults:
+    POSTGRES_USER: django
+    ...
+  services:
+    django:
+      image: centos:7
+      environment:
+        DATABASE_URL: "pgsql://{{ POSTGRES_USER }}:...."
+      expose:
+        - "{{ DJANGO_PORT }}"
+      working_dir: "{{ DJANGO_ROOT }}"
+      links:
+        - postgresql
+      command: ['{{ DJANGO_VENV }}/bin/gunicorn', .... ]
+    postgresql:
+      image: postgres:9.4
+      expose:
+        - "5432"
+      volumes:
+        - '/var/lib/postgresql/data'
+</pre></code>
