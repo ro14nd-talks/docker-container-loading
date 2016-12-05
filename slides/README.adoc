@@ -1,0 +1,66 @@
+
+== Docker Container Loading
+
+This presentation shows 10 different ways how Docker images can be created:
+
+* Local
+  - Dockerfile
+  - Template
+  - Ansible-Container
+  - Packer
+  - Rocker
+  - Build Intgeration
+* Remote / Cloud
+  - Automated Builds (Docker Hub)
+  - Continous Integration
+  - Google Container Builder
+  - OpenShift S2I
+
+The slides can are available as Docker container (see below) and as link:docker-container-loading.pdf[PDF]
+
+=== Startup
+
+The image is best started with the included `run.sh` or for some more
+fanciness, there is also a https://raw.githubusercontent.com/ro14nd-talks/docker-container-loading/master/run-container.sh[shell script] which can be used with e.g. `firefox $(curl -sL bit.ly/docker-container-loading | sh)`
+
+With this startup script the presentation is then available at
+`http://docker_host:9000` where `docker_host` is the address of your
+Docker daemon's host (e.g. `localhost` or the IP of your Docker VM).
+
+In order to recreate the image, use link:build.sh[build.sh].
+
+=== Links
+
+* Local
+  - https://github.com/fabric8io-images/fish-pepper[fish-pepper]
+  - https://docs.ansible.com/ansible-container/[ansible-container]
+  - https://dmp.fabric8.io[docker-maven-plugin]
+  - https://maven.fabric8.io[fabric8-maven-plugin]
+  - https://www.packer.io/docs/builders/docker.html[Packer Docker Builder]
+  - http://tech.grammarly.com/blog/posts/Making-Docker-Rock-at-Grammarly.html[Rocker]
+
+* Remote / Cloud
+  - https://hub.docker.com[Docker Hub]
+  - https://wiki.jenkins-ci.org/display/JENKINS/Docker+build+step+plugin[Jenkins Docker Build Step Plugin]
+  - https://docs.travis-ci.com/user/docker/[Travis Docker Builds]
+  - https://circleci.com/docs/docker/[Circle CI Docker Integration]
+  - https://cloud.google.com/container-builder/docs/[Google Container Builder]
+  - https://docs.openshift.org/latest/architecture/core_concepts/builds_and_image_streams.html#source-build[OpenShift S2I]
+
+* GitHub Projects
+  - https://github.com/ansible/ansible-container[ansible/container]
+  - https://github.com/fabric8io/docker-maven-plugin[fabric8io/docker-maven-plugin]
+  - https://github.com/fabric8io/fabric8-maven-plugin[fabric8io/fabric8-maven-plugin]
+  - https://github.com/fabric8io/shootout-docker-maven[fabric8io/shootout-docker-maven]
+  - https://github.com/grammarly/rocker[grammarly/rocker]
+  - https://github.com/openshift/source-to-image[openshift/source-to-image]
+
+* ro14nd
+  - https://ro14nd.de[Blog]
+  - http://fabric8.io[Fabric8]
+  - https://github.com/fabric8io/docker-maven-plugin[Docker Maven Plugin]
+  - https://www.jolokia.org[Jolokia]
+
+=== Tour
+
+* https://devopsconference.de/[DevOpsCon], Munich, 12/2016
