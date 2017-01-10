@@ -9,7 +9,7 @@ This presentation shows 10 different ways how Docker images can be created:
   - Ansible-Container
   - Packer
   - Rocker
-  - Build Intgeration
+  - Build Integration
 * Remote / Cloud
   - Automated Builds (Docker Hub)
   - Continous Integration
