@@ -1,7 +1,8 @@
 #!/bin/sh
+tag=devopsgathering-2017
 docker run -d \
       -p 9000:9000 -p 35729:35729 \
-      rhuss/talk-docker-container-loading:latest 1>&2
+      rhuss/docker-container-loading:${tag} 1>&2
 
 if [ $? -ne "0" ]; then
    echo "Error starting container: $?" 1>&2
