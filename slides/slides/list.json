@@ -4,6 +4,7 @@
   [
     "docker/overview.html",
     "docker/build-args.html",
+    "docker/multi-stage-builds.html",
     "docker/problems.html"
   ],
   [
@@ -17,8 +18,6 @@
   [
     "ansible-container/overview.html",
     "ansible-container/setup.html",
-    "ansible-container/container-yml.html",
-    "ansible-container/main-yml.html",
     "ansible-container/architecture.html",
     "ansible-container/conclusion.html"
   ],
@@ -61,7 +60,6 @@
     "openshift-s2i/example.html",
     "openshift-s2i/conclusion.html"
   ],
-
   "wrap-up.html",
   "questions-red.html"
 ]

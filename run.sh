@@ -1,5 +1,9 @@
 #!/bin/sh
 tag=$(git rev-parse --abbrev-ref HEAD)
+if [ $tag == "master" ]; then
+  tag="latest"
+fi
+
 echo "Starting presentation rhuss/docker-container-loading:${tag}"
 
 docker run -it --rm \

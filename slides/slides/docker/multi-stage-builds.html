@@ -1,0 +1,17 @@
+<h1 class="menu-title" style="display: none">Dockerfile ARGS</h1>
+<h1>Multi-stage builds</h1>
+
+<ul>
+  <li>Since Docker 17.05</li>
+  <li>Multiple <code>FROM</code> in a Dockerfile</li>
+  <li>Last section used for final image</li>
+</ul>
+<pre><code class="dockerfile">FROM golang AS builder
+WORKDIR /tmp
+COPY app.go .
+RUN go build app.go
+
+FROM scratch
+COPY --from=builder /tmp/app .
+CMD ["./app"]
+</code></pre>
